@@ -1,0 +1,33 @@
+PODS:
+  - device_info_plus (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - HPWebKit (1.2.1):
+    - SSZipArchive (~> 2.2)
+  - SSZipArchive (2.4.3)
+
+DEPENDENCIES:
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
+  - Flutter (from `Flutter`)
+  - HPWebKit
+
+SPEC REPOS:
+  trunk:
+    - HPWebKit
+    - SSZipArchive
+
+EXTERNAL SOURCES:
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  device_info_plus: e5c5da33f982a436e103237c0c85f9031142abed
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  HPWebKit: 0cd4b18364dc7c71499d0793c9fa4f93e40a49ae
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
+
+PODFILE CHECKSUM: dac1d4be646a6a20ac37e5b93644993854943037
+
+COCOAPODS: 1.11.3

@@ -1,0 +1,11 @@
+framework module HPWebKit {
+  umbrella header "HPWebKit.h"
+
+  export *
+  module * { export * }
+}
+
+module HPWebKit.Swift {
+    header "HPWebKit-Swift.h"
+    requires objc
+}

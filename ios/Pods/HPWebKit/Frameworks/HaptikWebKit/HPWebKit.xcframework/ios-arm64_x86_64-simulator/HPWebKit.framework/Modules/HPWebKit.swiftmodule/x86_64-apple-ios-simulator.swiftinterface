@@ -1,0 +1,158 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HPWebKit
+import Foundation
+@_exported import HPWebKit
+import Network
+import SSZipArchive
+import SafariServices
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+@_inheritsConvenienceInitializers @objc public class HPAttributesBuilder : ObjectiveC.NSObject {
+  @objc public var authID: Swift.String?
+  @objc public var authCode: Swift.String?
+  @objc public var userName: Swift.String?
+  @objc public var mobile: Swift.String?
+  @objc public var email: Swift.String?
+  @objc public var signupType: Swift.String
+  @objc public var customData: [Swift.String : Swift.String]?
+  @objc public class func build(data builderData: @escaping (HPWebKit.HPAttributesBuilder) -> Swift.Void) -> Self
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class HPCustomBuilder : ObjectiveC.NSObject {
+  @objc public var primaryColor: Swift.String
+  @objc public var fontSize: Swift.String
+  @objc public var typography: Swift.String
+  @objc public var enableTypingSuggestions: Swift.Bool
+  @objc public var hideComposer: Swift.Bool
+  @objc public var noHeader: Swift.Bool
+  @objc public var privacyPolicyUrl: Swift.String
+  @objc public var headerText: Swift.String
+  @objc public var initializeLanguage: Swift.String?
+  @objc public var composerPlaceholder: Swift.String
+  @objc public var uniqueChatIdentifier: Swift.String
+  @objc public var hidesTabBar: Swift.Bool
+  @objc public var skipSignupChatHistory: Swift.Bool
+  @objc public var loaderEnable: Swift.Bool
+  @objc public var loaderMessage: Swift.String
+  @objc public var loaderAnimate: Swift.Bool
+  @objc public var loaderColor: UIKit.UIColor?
+  @objc public var ignoreStorage: Swift.Bool
+  @objc public class func build(data builderData: @escaping (HPWebKit.HPCustomBuilder) -> Swift.Void) -> Self
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func debPrint(_ object: Any...)
+public func debPrint(_ object: Any)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HPSpinner : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open class var sharedInstance: HPWebKit.HPSpinner {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func hitTest(_ point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) open var titleLabel: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var subtitleLabel: UIKit.UILabel?
+  @_Concurrency.MainActor(unsafe) open class func show(_ title: Swift.String, animated: Swift.Bool = true, duration: Swift.Double = 1.0) -> HPWebKit.HPSpinner
+  @_Concurrency.MainActor(unsafe) open class func showWithDelay(_ delay: Swift.Double, title: Swift.String, animated: Swift.Bool = true, duration: Swift.Double = 1.0) -> HPWebKit.HPSpinner
+  @_Concurrency.MainActor(unsafe) open class func hide(_ completion: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) open class func setTitleFont(_ font: UIKit.UIFont?)
+  @_Concurrency.MainActor(unsafe) open var title: Swift.String {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var frame: CoreGraphics.CGRect {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var animating: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open func addTapHandler(_ tap: @escaping (() -> ()), subtitle subtitleText: Swift.String? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) open func clearTapHandler()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) open func updateFrame()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class HPResponse : ObjectiveC.NSObject {
+  @objc final public let status: Swift.Bool
+  @objc final public let message: Swift.String?
+  @objc final public let data: [Swift.String : Any]?
+  @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init?(hex: Swift.String)
+}
+@objc public protocol HPExternalEvent {
+  @objc func HPKitDidLoad()
+  @objc func HPUserSignupUpdate(result: HPWebKit.HPResponse)
+  @objc func HPKitLoadingState(state: HPWebKit.HPLoadingState, view: UIKit.UIView)
+  @objc func HPKitEvent(data: Any)
+}
+@objc public enum HPLoadingState : Swift.Int {
+  case start = 0
+  case complete
+  case failed
+  case closed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class HPKit : ObjectiveC.NSObject {
+  @objc public static let sharedSDK: HPWebKit.HPKit
+  @objc public var isActive: Swift.Bool {
+    @objc get
+  }
+  @objc public var delegate: HPWebKit.HPExternalEvent?
+  @objc public var title: Swift.String
+  @objc public var currentSettings: HPWebKit.HPCustomBuilder {
+    @objc get
+  }
+  @objc public func setup()
+  @objc public func setBusinessCSS(url: Swift.String)
+  @objc public func loadGuestConversation(launchController: UIKit.UIViewController, customData: [Swift.String : Swift.String]?) throws
+  @objc public func loadConversation(launchController: UIKit.UIViewController, attributes: HPWebKit.HPAttributesBuilder, customData: [Swift.String : Swift.String]?, customSettings: HPWebKit.HPCustomBuilder = HPCustomBuilder.build { _ in}) throws
+  @objc public func setDeviceToken(deviceToken: Foundation.Data)
+  @objc public func changeLanguage(languageCode: Swift.String, hidden: Swift.Bool = false)
+  @objc public func renewSignupToken(token: Swift.String)
+  @objc public func setCustomSettings(settings: HPWebKit.HPCustomBuilder)
+  @objc public func updateUserData(data: [Swift.String : Any])
+  @objc public func setLaunchMessage(message: Swift.String, hidden: Swift.Bool, skipMessage: Swift.Bool = false)
+  @objc public func clearLaunchMessage()
+  @objc public func getHPKitStatus() -> HPWebKit.HPstate
+  @objc public func canHandleNotificationWith(UserInfo userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
+  @available(*, unavailable, renamed: "logout")
+  @objc public func clearConversation()
+  @objc public func logout()
+  @objc public func clean(navController: UIKit.UINavigationController?)
+  @objc public func details()
+  @objc deinit
+}
+@objc public enum HPstate : Swift.Int {
+  case unavailable = 0
+  case unready
+  case ready
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension Swift.String : Swift.Error {
+}
+extension HPWebKit.HPLoadingState : Swift.Equatable {}
+extension HPWebKit.HPLoadingState : Swift.Hashable {}
+extension HPWebKit.HPLoadingState : Swift.RawRepresentable {}
+extension HPWebKit.HPstate : Swift.Equatable {}
+extension HPWebKit.HPstate : Swift.Hashable {}
+extension HPWebKit.HPstate : Swift.RawRepresentable {}
