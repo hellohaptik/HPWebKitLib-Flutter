@@ -1,2 +1,2 @@
-# saumilhaptik-HPWebKitLib-Flutter
-Flutter integrations with our SDK
+# HPWebKitLib-Flutter
+Flutter integrations with our SDK. HPWebKit Flutter is a sample Flutter application that showcases the integration of the Haptik SDK. The app provides a comprehensive example of how to incorporate the Haptik chatbot into a Flutter project. With HPWebKit Flutter, developers can quickly and easily implement Haptik's conversational AI capabilities into their own apps, enhancing user engagement and experience.
