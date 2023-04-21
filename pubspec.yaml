@@ -12,8 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  haptik_sdk: ^0.0.7
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
