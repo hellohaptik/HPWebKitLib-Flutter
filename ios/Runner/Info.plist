@@ -31,13 +31,13 @@
 	<key>HaptikLib</key>
 	<dict>
 		<key>baseUrl</key>
-		<string>YOUR_BASE_URL</string>
+		<string>https://api.haptikapi.com</string>
 		<key>businessID</key>
-		<string>YOUR_BUSINESS_ID</string>
+		<string>6167</string>
 		<key>clientID</key>
-		<string>YOUR_CLIENT_ID</string>
+		<string>f90f2b5a1c644f3fb8c84e92a84df09bcc2472dd</string>
 		<key>runEnvironment</key>
-		<string>O_OR_1</string>
+		<string>1</string>
 	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
