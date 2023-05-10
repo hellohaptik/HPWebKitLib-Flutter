@@ -53,7 +53,9 @@ class MainActivity: FlutterActivity() {
                 put("custom-data-two", "data-two")
             }
         }
-        args["launchMessage"]?.let { HaptikSDK.setLaunchMessage(it, hidden = true, skipMessage = true) }
+        if(args["launchMessage"] != null && args["launchMessage"] != "") {
+            args["launchMessage"]?.let { HaptikSDK.setLaunchMessage(it, hidden = true, skipMessage = true) }
+        }
         HaptikSDK.loadConversation(signUpData)
 
         HaptikSDK.logout(applicationContext)
